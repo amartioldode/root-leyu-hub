@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leyu · 简明访问指南</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f9f8f6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e1e;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem 3.5rem;
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3.2rem;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #111;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      color: #777;
+      font-size: 1rem;
+      border-bottom: 1px solid #e3e1de;
+      padding-bottom: 1.2rem;
+      margin-top: 0.3rem;
+    }
+
+    /* 杂志式分隔标题 */
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9a9a99;
+      margin-bottom: 0.6rem;
+      border-top: 2px solid #d6d4d0;
+      padding-top: 0.5rem;
+      display: inline-block;
+    }
+
+    .intro-wrap p {
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+      color: #2c2c2c;
+    }
+
+    .intro-wrap p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 卡片特点 (简洁) */
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2.8rem 0 2.8rem;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.2rem 1.6rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      border: 1px solid #eae8e5;
+      transition: border 0.2s;
+    }
+
+    .feature-item h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      color: #1a1a1a;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #4f4e4c;
+      margin-top: 0.2rem;
+    }
+
+    /* 提示区块 */
+    .notice-box {
+      background: #f3f1ee;
+      padding: 1.4rem 1.6rem;
+      border-radius: 16px;
+      margin: 2.8rem 0 2.4rem;
+      border-left: 4px solid #c6c2bc;
+    }
+
+    .notice-box p {
+      font-size: 0.92rem;
+      color: #3b3a38;
+      margin-bottom: 0.5rem;
+    }
+
+    .notice-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .notice-box strong {
+      font-weight: 500;
+      color: #1e1e1e;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      border-top: 1px solid #ddd9d4;
+      padding-top: 1.8rem;
+      margin-top: 2.5rem;
+      text-align: left;
+      font-size: 0.92rem;
+      color: #5a5956;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+
+    .footer-note a {
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid #bbb8b3;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 450;
+    }
+
+    .footer-note a:hover {
+      color: #000;
+      border-bottom-color: #1e1e1e;
+    }
+
+    .meta-tag {
+      font-size: 0.7rem;
+      color: #a9a6a0;
+      letter-spacing: 0.02em;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      .page { padding: 1.6rem 1.2rem 2.8rem; }
+      .hero h1 { font-size: 2rem; }
+      .feature-item { padding: 1rem 1.2rem; }
+      .footer-note { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 首页横幅 / hero -->
+    <header class="hero">
+      <h1>leyu</h1>
+      <div class="sub">一份克制的访问指南 · 简明背景与实用提示</div>
+    </header>
+
+    <!-- 背景说明 + 三段自然介绍 (杂志式) -->
+    <section>
+      <span class="section-label">背景 · 方向</span>
+      <div class="intro-wrap">
+        <p>
+          谈及网络信息的获取，稳定与清晰始终是首要的考量。<strong>leyu</strong> 所对应的服务更偏向于一种轻量化的信息访问结构——它不追求繁复的界面或夸张的承诺，而是试图在简洁的路径中提供一致的浏览体验。无论是初次接触还是日常使用，了解其基础逻辑都会让整个过程更加顺畅。
+        </p>
+        <p>
+          从设计上看，<strong>leyu</strong> 的页面层次偏重内容本身，减少不必要的跳转与干扰。访问者可以在较短的路径内找到需要关注的信息块。这种「少即是多」的布局思路，在一定程度上降低了认知负担，尤其适合那些希望快速获取核心内容的场景。
+        </p>
+        <p>
+          当然，任何网络服务都离不开对访问环境的关注。保持浏览器版本更新、留意网络连接状态，以及确认访问地址的准确性，都是最基本的习惯。下面列出几个容易被忽略但实际影响体验的细节，供你参考。
+        </p>
+      </div>
+    </section>
+
+    <!-- 特点 / 场景 (卡片式) -->
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>信息层级</h3>
+        <p>页面采用窄正文与清晰标题，减少视觉噪音。每个模块的功能边界明确，便于快速定位。</p>
+      </div>
+      <div class="feature-item">
+        <h3>访问节奏</h3>
+        <p>无需频繁刷新或多次点击，主要交互集中在少数关键节点。适合碎片化时间下的信息浏览。</p>
+      </div>
+      <div class="feature-item">
+        <h3>环境适配</h3>
+        <p>移动端与桌面端均保持基本的可读性，但建议在稳定的网络环境下使用，以获得最佳的加载表现。</p>
+      </div>
+    </div>
+
+    <!-- 提示区块 (FAQ 摘要风格) -->
+    <div class="notice-box">
+      <p><strong>常见提醒 · 摘要</strong></p>
+      <p>🔹 如果页面加载异常，可尝试清除浏览器缓存或更换网络环境。</p>
+      <p>🔹 请认准唯一地址：<code style="background: #e5e2dd; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.85rem;">https://root-leyu.com.cn</code>，注意拼写与协议头。</p>
+      <p>🔹 部分功能可能因地区网络差异而略有不同，建议以实际页面显示为准。</p>
+      <p>🔹 不需要注册或下载额外工具，直接通过浏览器访问即可。</p>
+    </div>
+
+    <!-- 页尾访问提示 (包含严格文本 a 标签) -->
+    <footer class="footer-note">
+      <span>
+        若你需要进一步了解，可访问
+        <a href="https://root-leyu.com.cn">leyu</a>
+        ，页面内容均以实际展示为准。
+      </span>
+      <span class="meta-tag">· 简明指南</span>
+    </footer>
+
+    <!-- 隐含的纯文字种子标记（不显示） -->
+    <!-- 种子：744c0847cc8726e7 -->
+  </div>
+</body>
+</html>
