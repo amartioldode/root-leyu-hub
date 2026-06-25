@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>1xbet · 知识库与使用参考</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 1.25rem;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 1150px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 12px 40px rgba(0, 85, 80, 0.06);
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        /* 标题引导区域 */
+        .hero-note {
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #0d9488;
+            padding-left: 1.25rem;
+        }
+
+        .hero-note h1 {
+            font-size: 2rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-note h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #475569;
+            margin-left: 0.2rem;
+        }
+
+        .hero-note p {
+            color: #334155;
+            margin-top: 0.6rem;
+            font-size: 1rem;
+            max-width: 680px;
+        }
+
+        /* 目录感网格卡片 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2.2rem 0 2.5rem;
+        }
+
+        @media (min-width: 600px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .page {
+                padding: 2.8rem 2.5rem 3.5rem;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(13, 148, 136, 0.06);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: #a7f3d0;
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .card .icon-tag {
+            display: inline-block;
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.45rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 0.2rem;
+        }
+
+        .card .meta-line {
+            display: block;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.7rem;
+            border-top: 1px dashed #d1d5db;
+            padding-top: 0.6rem;
+        }
+
+        /* 说明区 + 提示区 并排或堆叠 */
+        .info-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+
+        @media (min-width: 700px) {
+            .info-panel {
+                flex-direction: row;
+            }
+            .info-panel > * {
+                flex: 1;
+            }
+        }
+
+        .section-block {
+            background: #f1f5f9;
+            border-radius: 1.25rem;
+            padding: 1.6rem 1.5rem;
+        }
+
+        .section-block h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0d6b61;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .section-block p, .section-block li {
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .section-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section-block li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .section-block li::before {
+            content: "▹";
+            color: #0d9488;
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 1.25rem;
+            padding: 1.6rem 1.5rem;
+        }
+
+        .tip-box h2 {
+            font-size: 1.15rem;
+            color: #0b6e5f;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tip-box p {
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .tip-box .highlight {
+            background: #d1fae5;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-weight: 500;
+            color: #065f46;
+        }
+
+        /* 相关信息区 */
+        .related-area {
+            border-top: 1px solid #d1d5db;
+            margin-top: 1.8rem;
+            padding-top: 1.8rem;
+        }
+
+        .related-area h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+
+        .related-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 0.5rem;
+        }
+
+        .related-item {
+            background: #f1f5f9;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+            white-space: nowrap;
+        }
+
+        .related-item strong {
+            color: #0d9488;
+        }
+
+        .faq-mini {
+            margin-top: 2rem;
+            padding: 1.2rem 0;
+        }
+
+        .faq-mini details {
+            background: #fafafa;
+            border-radius: 1rem;
+            padding: 0.7rem 1.2rem;
+            margin-bottom: 0.6rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #0f172a;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.5rem;
+            color: #334155;
+            font-size: 0.9rem;
+        }
+
+        /* 自然嵌入链接 */
+        .inline-link {
+            color: #0d9488;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .inline-link:hover {
+            color: #0f766e;
+            background: #ccfbf1;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.8rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 1.2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero 式说明 -->
+    <div class="hero-note">
+        <h1>
+            <span>🧭 关于</span> 1xbet
+            <small>· 知识库</small>
+        </h1>
+        <p>
+            一个与数字平台、线上服务、用户社区紧密关联的标识。这里集合了使用背景、常见概念、场景参考与相关提示，帮助你建立更清晰的认知。
+        </p>
+    </div>
+
+    <!-- 网格卡片布局 —— 目录感 -->
+    <div class="card-grid">
+        <div class="card">
+            <div class="icon-tag">📌</div>
+            <h3>主题背景</h3>
+            <p>围绕 1xbet 所涉及的数字服务与内容生态，梳理基础脉络与功能定位，便于快速了解整体方向。</p>
+            <span class="meta-line">📂 知识节点 · 基础</span>
+        </div>
+        <div class="card">
+            <div class="icon-tag">🖥️</div>
+            <h3>界面与操作</h3>
+            <p>平台界面布局、常用模块、导航逻辑与个性化设置。适合初次接触或想优化使用习惯的人。</p>
+            <span class="meta-line">⚙️ 操作指引</span>
+        </div>
+        <div class="card">
+            <div class="icon-tag">🌐</div>
+            <h3>连接与访问</h3>
+            <p>网络环境、链接稳定性、区域适配与基础排障思路。保持连接顺畅是良好体验的前提。</p>
+            <span class="meta-line">🌍 网络提示</span>
+        </div>
+        <div class="card">
+            <div class="icon-tag">🛡️</div>
+            <h3>账户与安全</h3>
+            <p>注册流程、验证方式、隐私保护与账户管理的基础建议，养成安全使用习惯。</p>
+            <span class="meta-line">🔐 安全备忘</span>
+        </div>
+        <div class="card">
+            <div class="icon-tag">📱</div>
+            <h3>移动端适配</h3>
+            <p>在手机与平板上的界面响应、触控优化、快捷操作。移动场景下的使用体验持续提升。</p>
+            <span class="meta-line">📲 多终端</span>
+        </div>
+        <div class="card">
+            <div class="icon-tag">💬</div>
+            <h3>社区与交流</h3>
+            <p>用户讨论、常见话题、信息分享习惯。通过社区可以了解不同视角的经验。</p>
+            <span class="meta-line">🗣️ 信息源</span>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示区 (双栏/堆叠) -->
+    <div class="info-panel">
+        <div class="section-block">
+            <h2><span>📋</span> 使用说明</h2>
+            <ul>
+                <li>确保设备与网络环境稳定，推荐使用主流浏览器最新版本。</li>
+                <li>首次使用时，建议先熟悉界面布局与菜单分类，减少误操作。</li>
+                <li>善用搜索与筛选功能，可以快速定位感兴趣的内容模块。</li>
+                <li>如遇到显示异常，可尝试清除缓存或切换网络后再试。</li>
+                <li>部分功能可能需要更新浏览器或启用 cookie / JavaScript。</li>
+            </ul>
+        </div>
+        <div class="tip-box">
+            <h2><span>💡</span> 提示备忘</h2>
+            <p>
+                日常使用中，保持<strong>书签</strong>与<strong>快捷方式</strong>井井有条能提升效率。
+                如果你经常使用 <span class="highlight">1xbet</span> 相关服务，
+                不妨将常用页面整理到一个文件夹中。
+            </p>
+            <p style="margin-top:0.8rem">
+                另外，注意辨别信息来源，只参考官方或可信渠道的公告与文档。
+                遇到要求提供敏感信息的消息，务必保持警惕。
+            </p>
+            <p style="margin-top:0.8rem">
+                想直接访问平台？这里是链接：
+                <a href="https://webs-portal-1xbet.com" class="inline-link">1xbet</a>
+                —— 建议添加为浏览器书签，方便日后直接打开。
+            </p>
+        </div>
+    </div>
+
+    <!-- 相关信息区 (关联目录标签) -->
+    <div class="related-area">
+        <h3>🔎 相关信息</h3>
+        <div class="related-grid">
+            <span class="related-item"><strong>1xbet</strong> 背景</span>
+            <span class="related-item">平台动态</span>
+            <span class="related-item">功能更新</span>
+            <span class="related-item">用户指南</span>
+            <span class="related-item">常见缩写</span>
+            <span class="related-item">技术基础</span>
+            <span class="related-item">帮助中心</span>
+            <span class="related-item">安全建议</span>
+        </div>
+
+        <!-- FAQ摘要部分 -->
+        <div class="faq-mini">
+            <details>
+                <summary>📌 1xbet 到底是什么？一个平台吗？</summary>
+                <p>可以理解为一个线上服务入口，整合了多种信息与操作模块。通常人们用它来指代与之关联的网站或数字服务集。</p>
+            </details>
+            <details>
+                <summary>📌 使用前需要准备什么？</summary>
+                <p>稳定的网络、现代浏览器（Chrome / Edge / Safari 等），以及一个有效的电子邮箱或手机号用于注册账户（如需要）。</p>
+            </details>
+            <details>
+                <summary>📌 遇到页面打不开怎么办？</summary>
+                <p>可以先检查网络连接，尝试刷新或使用其他DNS；也可以暂时更换网络环境。如果持续无法访问，建议稍后重试，或查看官方渠道是否有维护公告。</p>
+            </details>
+            <details>
+                <summary>📌 这个知识库会更新吗？</summary>
+                <p>相关信息会随着平台迭代与用户反馈逐步补充。定期回顾可以帮助你保持对功能与变化的了解。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 一个自然嵌入链接的句子（已在 tip-box 中出现，这里再安排一次以增强多样性，且不重复相同句式） -->
+    <hr>
+    <p style="font-size:0.95rem; color:#334155; margin: 1rem 0;">
+        如果你希望直接探索平台内容，可以试试打开 <a href="https://webs-portal-1xbet.com" class="inline-link">1xbet</a>，
+        根据首页导航找到自己感兴趣的区域。
+    </p>
+
+    <footer>
+        <span>知识库入口 · 内容仅供学习与参考 · 非官方文档</span>
+        <span style="display:block; margin-top:0.3rem;">保持好奇，理性探索</span>
+    </footer>
+</div>
+</body>
+</html>
